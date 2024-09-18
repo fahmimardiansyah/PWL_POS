@@ -11,4 +11,11 @@ class UserModel extends Model
 
     protected $table = 'm_user';
     protected $primarykey = 'user_id'; 
+    /** 
+     * The atrributes that are mass assignable.
+     * 
+     * @var array
+     * 
+     */
+    protected $fillable = ['level_id', 'username', 'nama'];
 }
