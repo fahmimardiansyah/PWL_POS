@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 14, 2024 at 11:14 AM
+-- Generation Time: Sep 20, 2024 at 04:34 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -201,7 +201,12 @@ CREATE TABLE `m_user` (
 INSERT INTO `m_user` (`user_id`, `level_id`, `username`, `nama`, `password`, `created_at`, `updated_at`) VALUES
 (1, 1, 'admin', 'Administrator', '$2y$12$aoIigZJv41nhc2cy09MDmOjFacS1xlde1OJK7Z3M9JWaYnHbazdUy', NULL, NULL),
 (2, 2, 'manager', 'Manager', '$2y$12$4ToPyvc0D4ATKvcsyMpC0O7BDI0spy.nqf2Ra3pLYugo2AWy65GMy', NULL, NULL),
-(3, 3, 'staff', 'Staff/Kasir', '$2y$12$YEPsENE5Qre9ZWX8Wc//c.9eEhsN0DtHEvBzW3eA/PbHPsppbu/wW', NULL, NULL);
+(3, 3, 'staff', 'Staff/Kasir', '$2y$12$YEPsENE5Qre9ZWX8Wc//c.9eEhsN0DtHEvBzW3eA/PbHPsppbu/wW', NULL, NULL),
+(5, 2, 'manager_dua', 'Manager 2', '$2y$12$tqpZOUdg7KchGiLaQx3VO.6hgNo9BQu79bJkQDlGuh9h4FlxCyjNC', '2024-09-17 17:42:04', '2024-09-17 17:42:04'),
+(6, 2, 'manager22', 'Manager Dua Dua', '$2y$12$WqOi7s0gUg1EtbA5SZsuNuGj4na3gJBRbctCF3Tu4CfRLgBaku2sq', '2024-09-19 08:12:50', '2024-09-19 08:12:50'),
+(7, 2, 'manager33', 'Manager Tiga Tiga', '$2y$12$c0sCDHPjrY3dGwdMAsYR/Oh4rLtMcVgU3oK84ZwdJ60VC3sEoPg52', '2024-09-19 08:17:14', '2024-09-19 08:17:14'),
+(9, 2, 'manager56', 'Manager55', '$2y$12$XgT/xKlX36iG37la.Xux6um1YF0A7itXNPfncETb9BeQhDbvU5dv.', '2024-09-19 08:26:29', '2024-09-19 08:26:29'),
+(10, 2, 'manager12', 'Manager11', '$2y$12$46H7rpjY6qDXT6Fzcr40SuzYdkfgqA0a0TNqb150fDPmhCUHtM2GG', '2024-09-19 08:33:15', '2024-09-19 08:33:15');
 
 -- --------------------------------------------------------
 
@@ -513,7 +518,7 @@ ALTER TABLE `m_supplier`
 -- AUTO_INCREMENT for table `m_user`
 --
 ALTER TABLE `m_user`
-  MODIFY `user_id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `user_id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
