@@ -26,7 +26,7 @@ class SupplierController extends Controller
 
     public function list(Request $request)
     {
-        $supplier = SupplierModel::select('supplier_id', 'supplier_kode', 'supplier_name', 'supplier_alamat');
+        $supplier = SupplierModel::select('supplier_id', 'supplier_kode', 'supplier_nama', 'supplier_alamat');
 
         return DataTables::of($supplier)
             ->addIndexColumn()
