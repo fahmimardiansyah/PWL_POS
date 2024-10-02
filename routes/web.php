@@ -39,9 +39,13 @@ Route::group(['prefix' => 'user'], function (){
     Route::post('/list', [UserController::class, 'list']); //menampilkan data user dalam bentuk json utnuk datatables
     Route::get('/create', [UserController::class, 'create']); //menampilkan halaman form tambah user
     Route::post('/', [UserController::class, 'store']); //menyimpan data user baru
+    Route::get('/create_ajax', [UserController::class, 'create_ajax']); //menampilkan
+    Route::post('/ajax', [UserController::class, 'store_ajax']); //menampilkan
     Route::get('/{id}', [UserController::class, 'show']); //menampilkan detail user
     Route::get('/{id}/edit', [UserController::class, 'edit']); //menampilkan halaman form edit user
     Route::put('/{id}', [UserController::class, 'update']); //menyimpan peruabahan data user
+    Route::get('/{id}/edit_ajax', [UserController::class, 'edit_ajax']); //Menampilkan halaman form edit user Ajax
+    Route::put('/{id}/update_ajax', [UserController::class, 'update_ajax']); //Menampilkan halaman form edit user Ajax
     Route::delete('/{id}', [UserController::class, 'destroy']); //menghapus data user
 }); 
 
