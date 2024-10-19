@@ -4,10 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Login Pengguna</title>
+    <title>Register Pengguna</title>
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{{ asset('adminlte/plugins/fontawesome-free/css/all.min.css') }}">
     <!-- icheck bootstrap -->
@@ -20,13 +20,23 @@
 
 <body class="hold-transition login-page">
     <div class="login-box">
-        <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center"><a href="{{ url('/') }}" class="h1"><b>Admin</b>LTE</a></div>
             <div class="card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
-                <form action="{{ url('login') }}" method="POST" id="form-login">
+                <p class="login-box-msg">Sign up to start your session</p>
+                <form action="{{ url('register') }}" method="POST" id="form-register">
                     @csrf
+                    <div class="form-group"> 
+                        <label>Level Pengguna</label> 
+                        <select name="level_id" id="level_id" class="form-control" required> 
+                            <option value="">- Pilih Level -</option> 
+                            @foreach($level as $l) 
+                                <option value="{{ $l->level_id }}">{{ $l->level_nama }}</option> 
+                            @endforeach 
+                        </select> 
+                        <small id="error-level_id" class="error-text form-text text-danger"></small> 
+                    </div> 
+                    
                     <div class="input-group mb-3">
                         <input type="text" id="username" name="username" class="form-control"
                             placeholder="Username">
@@ -37,6 +47,18 @@
                         </div>
                         <small id="error-username" class="error-text text-danger"></small>
                     </div>
+
+                    <div class="input-group mb-3">
+                        <input type="text" id="nama" name="nama" class="form-control"
+                            placeholder="Nama">
+                        <div class="input-group-append">
+                            <div class="input-group-text">
+                                <span class="fas fa-envelope"></span>
+                            </div>
+                        </div>
+                        <small id="error-nama" class="error-text text-danger"></small>
+                    </div>
+
                     <div class="input-group mb-3">
                         <input type="password" id="password" name="password" class="form-control"
                             placeholder="Password">
@@ -48,25 +70,21 @@
                         <small id="error-password" class="error-text text-danger"></small>
                     </div>
                     <div class="row">
-                        <div class="col-8">
-                            <div class="icheck-primary">
-                                <input type="checkbox" id="remember"><label for="remember">Remember Me</label>
-                            </div>
-                        </div>
                         <!-- /.col -->
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                         </div>
                         <!-- /.col -->
                     </div>
-                    <p class="login-box-msg">Tidak Punya Akun? <a href="{{ url('register') }}">Daftar Sekarang</a></p>
+                    <p class="login-box-msg">Sudah Punya Akun? <a href="{{ url('login') }}">Sign in</a></p>
                 </form>
             </div>
             <!-- /.card-body -->
         </div>
         <!-- /.card -->
     </div>
-    <!-- /.login-box -->
+
+{{-- 0895001794957 --}}
 
     <!-- jQuery -->
     <script src="{{ asset('adminlte/plugins/jquery/jquery.min.js') }}"></script>
@@ -88,19 +106,13 @@
         });
 
         $(document).ready(function() {
-            $("#form-login").validate({
-                rules: {
-                    username: {
-                        required: true,
-                        minlength: 4,
-                        maxlength: 20
-                    },
-                    password: {
-                        required: true,
-                        minlength: 5,
-                        maxlength: 20
-                    }
-                },
+            $("#form-register").validate({
+                rules: { 
+                    level_id: {required: true, number: true}, 
+                    username: {required: true, minlength: 4, maxlength: 20}, 
+                    nama: {required: true, minlength: 3, maxlength: 100}, 
+                    password: {required: true, minlength: 5, maxlength: 20} 
+                }, 
                 submitHandler: function(form) { // ketika valid, maka bagian yg akan dijalankan 
                     $.ajax({
                         url: form.action,
