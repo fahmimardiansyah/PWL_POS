@@ -7,6 +7,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\SupplierController;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
 Route::pattern('id', '[0-9]+');
@@ -88,6 +89,8 @@ Route::middleware('auth')->group(function () {
         Route::delete('/barang/{id}', [BarangController::class, 'destroy']);     // menghapus data barang
         Route::get('/barang/import', [BarangController::class,'import']);
         Route::post('/barang/import_ajax', [BarangController::class,'import_ajax']);
+        Route::get('/barang/export_excel', [BarangController::class,'export_excel']);
+        Route::get('/barang/export_pdf', [BarangController::class,'export_pdf']);
     });
     Route::group(['prefix' => 'supplier'], function () {
         Route::get('/', [SupplierController::class, 'index']);              // menampilkan halaman awal supplier
@@ -105,6 +108,9 @@ Route::middleware('auth')->group(function () {
         Route::delete('/{id}/delete_ajax', [SupplierController::class, 'delete_ajax']); // Untuk hapus data supplier Ajax
         Route::delete('/{id}', [SupplierController::class, 'destroy']);     // menghapus data supplier
     });
+
+    Route::get('/profile', [ProfileController::class, 'index']);
+    Route::post('upload_foto', [ProfileController::class, 'upload_foto'])->name('upload.foto');
 });
 
 // use App\Http\Controllers\KategoriController;
