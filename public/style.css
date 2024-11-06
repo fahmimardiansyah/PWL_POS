@@ -1,0 +1,693 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+header {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    margin-right: 80px;
+    background-color: #000000;
+    color: #fff;
+    z-index: 1000;
+}
+
+header img {
+    width: 80px;
+    height: auto;
+}
+
+nav ul {
+    align-items: center;
+    display: flex;
+    list-style-type: none;
+    padding-right: 50px;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li:hover a {
+    color: #F7BDD1; /* Warna teks saat hover */
+}
+
+nav ul li a.btn {
+    padding: 10px 15px; /* Adjust padding if needed */
+    background-color: #ff00ff; /* Background color */
+    border-radius: 15px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+nav ul li a.btn:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profile-picture {
+
+    width: 40px; /* Atur ukuran sesuai kebutuhan */
+    height: 40px;
+    border-radius: 50%; /* Membuat gambar menjadi bulat */
+    object-fit: cover;
+}
+
+.top {
+    position: relative;
+    width: 100%;
+    height: 100px;
+    padding-top: 50px;
+}
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('img/download.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 500px;
+}
+
+.banner .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    text-align: center;
+}
+
+.banner .text h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+.banner .text p {
+    font-size: 20px;
+}
+
+.bannerr {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('img/girl.jpg');
+    background-size: cover;
+    background-position: center;
+    padding-top: 500px;
+}
+
+.bannerr .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    text-align: center;
+}
+
+.bannerr .text h1 {
+    font-size: 50px;
+    margin: 0;
+}
+
+.bannerr .text p {
+    font-size: 20px;
+}
+
+.container {
+    width: 90%;
+    margin: 100px auto;
+    max-width: 1920px;
+}
+
+h2 {
+    font-size: 36px;
+    margin-top: 0;
+    margin-bottom: 0;
+    color: #333;
+    text-align: center;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: #ff00ff;
+    margin: 10px auto 0;
+}
+
+.catalog {
+    margin-top: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 80px;
+}
+
+.catalog-title {
+    text-align: center;
+    margin-top: 200px;
+}
+
+.catalog-title h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #000000;
+}
+
+
+.slider-container {
+    width: 100%;
+    height: 1000px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider {
+    display: flex;
+    transition: transform 1s ease-in-out;
+    justify-content: center; /* Menyelaraskan konten secara horizontal */
+    align-items: center; /* Menyelaraskan konten secara vertikal */
+}
+
+.slide {
+    flex: 0 0 100%; /* Membuat slide mengambil lebar 100% */
+    display: flex; /* Menggunakan flex untuk mengatur gambar */
+    justify-content: center; /* Menyelaraskan gambar secara horizontal */
+    align-items: center; /* Menyelaraskan gambar secara vertikal */
+}
+
+.slide img {
+    margin-top: 1%;
+    border-radius: 30px;
+    width: 70%; /* Atur lebar gambar sesuai keinginan */
+    height: auto; /* Memastikan tinggi otomatis untuk mempertahankan rasio */
+    max-height: 80%; /* Batasi tinggi gambar agar tetap dalam batas */
+    object-fit: cover; /* Pastikan gambar menutupi slide dengan baik */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.dot-container {
+    z-index: 5;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 1.5em;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    border-radius: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+    cursor: pointer;
+}
+
+.active-dot {
+    background-color: white;
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 10; /* Pastikan panah muncul di atas slider */
+    transition: background-color 0.3s;
+}
+
+.arrow:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Warna saat hover */
+}
+
+.arrow.left {
+    left: 10px; /* Posisi panah kiri */
+}
+
+.arrow.right {
+    right: 10px; /* Posisi panah kanan */
+}
+
+.card {
+    width: 300px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Membesarkan kartu 5% saat hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Mengubah bayangan untuk efek 3D */
+}
+
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.card .price {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card .btn {
+    font-weight: 400;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff00ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.assets {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 10px;
+}
+
+.asset-card {
+    width: 200px;
+    height: 300px;
+    margin: 30px;
+}
+
+.asset-card img {
+    width: 100%; /* Gambar mengikuti lebar kartu */
+    height: auto; /* Memastikan rasio gambar tetap terjaga */
+    max-height: 200px; /* Batasi tinggi maksimum gambar */
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.asset-card img:hover {
+    transform: scale(1.05); /* Membesarkan kartu 5% saat hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Mengubah bayangan untuk efek 3D */
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.button-container .btn {
+    padding: 10px 20px;
+    background-color: #ff00ff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+}
+
+.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.about-me-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    text-align: left;
+}
+
+.about-me-image img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 3px solid #000000;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.about-me-text {
+    max-width: 600px;
+    font-size: 18px;
+    color: #333;
+    line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+    .about-me-content {
+        flex-direction: column;
+    }
+
+    .about-me-image img {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+/* profile page */
+.profile-container {
+    max-width: 800px;
+    margin: 20px;
+    margin-bottom: 50px;
+    margin-left: 23%;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+.profile-name {
+    font-size: 28px;
+    font-weight: bold;
+    color: #333;
+}
+
+.profile-details h2 {
+    font-size: 24px;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.profile-details p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.profile-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.profile-actions .btn {
+    font-family: 'Poppins', sans-serif;
+    font-weight: bolder;
+    margin: 0 10px;
+    padding: 10px 20px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff00ff;
+    color: white;
+    text-decoration: none;
+}
+
+.profile-actions .btn-secondary {
+    background-color: #555;
+}
+
+.contact-info h3 {
+    font-size: 20px;
+    margin-top: 30px;
+}
+
+.contact-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+
+footer {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    background-color: #000000;
+    color: #fff;
+    padding: 40px 20px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px; /* Minimum lebar untuk setiap section */
+    margin: 10px;
+}
+
+.footer-section h4 {
+    margin-bottom: 15px;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #ff00ff; /* Warna tautan */
+    text-decoration: none;
+}
+
+.footer-section ul li a:hover {
+    text-decoration: underline; /* Garis bawah saat hover */
+}
+
+.social-media {
+    display: flex;
+    gap: 10px; /* Jarak antar ikon */
+}
+
+.social-media a {
+    color: #fff;
+    font-size: 20px; /* Ukuran ikon */
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* table */
+/* Style tabel */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 0.95rem;
+}
+
+.table thead th {
+    background-color: #f1f1f1;
+    color: #333;
+    padding: 10px;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid #ddd;
+}
+
+.table tbody td {
+    padding: 10px;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* Center align for table actions */
+.table tbody td.text-center {
+    text-align: center;
+}
+
+/* Style untuk modal */
+#myModal {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+/* Style untuk button modal */
+#myModal .modal-content {
+    border-radius: 8px;
+}
+
+
+/* stok */
+.cont {
+    max-width: 1600px; /* Batas maksimal lebar kontainer */
+    margin: 20px auto; /* Otomatis di tengah dengan margin atas dan bawah */
+    padding: 20px; /* Ruang dalam di sekeliling konten */
+    background-color: #fff; /* Warna latar belakang konten */
+    border-radius: 10px; /* Membuat sudut konten melengkung */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+}
+
+.cont-header {
+    display: flex;
+    justify-content: space-between; /* Menempatkan judul di kiri dan tombol di kanan */
+    align-items: center;
+    margin-bottom: 20px; /* Jarak bawah untuk memberi ruang antara header dan konten */
+}
+
+.cont-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333; /* Warna teks */
+}
+
+.cont-tools {
+    display: flex;
+    justify-content: right;
+    gap: 10px; /* Jarak antar tombol */
+}
+
+.cont-body {
+    padding: 10px; /* Ruang dalam di sekeliling body konten */
+    border-top: 1px solid #ddd; /* Garis pembatas antara header dan body */
+}
+
+/* Style untuk tabel */
+#table-stok {
+    width: 100%; /* Tabel penuh mengikuti lebar kontainer */
+    border-collapse: collapse; /* Menghilangkan jarak antar border sel */
+}
+
+#table-stok th, #table-stok td {
+    padding: 10px;
+    text-align: left; /* Perataan teks dalam tabel */
+    border: 1px solid #ddd; /* Border di sekitar sel */
+}
+
+#table-stok th {
+    background-color: #f4f4f4; /* Warna latar belakang untuk header tabel */
+    font-weight: bold;
+}
+
+#table-stok tr:hover {
+    background-color: #f1f1f1; /* Warna saat baris tabel dihover */
+}
+
+/* Style untuk modal */
+#myModal {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.dataTables_info {
+    display: none; /* Sembunyikan bagian info */
+}
+
+/* Mengatur ukuran tombol Previous dan Next */
+.dataTables_paginate .paginate_button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    padding: 4px 8px;
+    margin: 0 3px;
+    background-color: #ff55ff;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    gap: 10px;
+}
+
+/* Mengatur tampilan tombol ketika di-hover */
+.dataTables_paginate .paginate_button:hover {
+    background-color: #ff4696;
+    color: white;
+}
+
+/* Mengatur tampilan tombol Previous dan Next saat disabled */
+.dataTables_paginate .paginate_button.disabled {
+    background-color: #8d8d8d;
+    color: #ffffff;
+    cursor: not-allowed;
+}
+
+/* Menyembunyikan angka halaman (yang sebenarnya tidak ada) */
+.dataTables_paginate .paginate_button.current {
+    display: none;
+}
+
+/* Memperbaiki posisi Previous dan Next */
+.dataTables_paginate {
+    text-align: center;
+    margin-top: 15px;
+}
+
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .cont-header {
+        flex-direction: column;
+        align-items: flex-start; /* Judul dan tombol tidak lagi berjejer, tapi bertumpuk */
+    }
+
+    .cont-tools {
+        margin-top: 10px; /* Jarak antar tombol saat beralih ke kolom */
+        width: 100%; /* Tombol akan memenuhi lebar */
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .cont-tools a, .cont-tools button {
+        width: 100%; /* Tombol penuh saat tampilan kecil */
+    }
+    
+}
