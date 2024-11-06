@@ -8,31 +8,30 @@ use Illuminate\Support\Facades\Validator;
 
 class LoginController extends Controller
 {
-    public function  __invoke(Request $request)
+    public function __invoke(Request $request)
     {
-        // set validation
+        //set validation
         $validator = Validator::make($request->all(), [
             'username' => 'required',
-            'password' => 'required',
+            'password' => 'required'
         ]);
 
-        // if validation fails
+        //if validation fails
         if ($validator->fails()) {
-            return response()->json($validator->errors(),422);
+            return response()->json($validator->errors(), 422);
         }
-        
-        // get credential from request
-        $credentials = $request->only('username','password');
 
-        // if auth failed
-        if(!$token = auth()->guard('api')->attempt($credentials)) {
+        //get credentials from request
+        $credentials = $request->only('username', 'password');
+
+        //if auth failed
+        if (!$token = auth()->guard('api')->attempt($credentials)) {
             return response()->json([
                 'success' => false,
-                'message' => 'Username atau Password Anda Salah'
+                'message' => 'Username atau Password Anda salah'
             ], 401);
         }
-
-        // if auth success
+        //if auth success
         return response()->json([
             'success' => true,
             'user' => auth()->guard('api')->user(),
@@ -40,4 +39,3 @@ class LoginController extends Controller
         ], 200);
     }
 }
-

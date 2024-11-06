@@ -12554,14 +12554,9 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
 }
 
 .main-sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 250px; /* Sesuaikan dengan lebar sidebar */
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: hidden;
   z-index: 1038;
-  background-color: #141450;
 }
 
 .main-sidebar a:-moz-focusring {
@@ -12579,7 +12574,6 @@ body:not(.layout-fixed) .main-sidebar .sidebar {
   padding-top: 0;
   scrollbar-color: #a9a9a9 transparent;
   scrollbar-width: none;
-  background-color: #141450; /* Atur warna background sesuai keinginan */
 }
 
 .sidebar::-webkit-scrollbar-thumb {

@@ -8,41 +8,6 @@
         </div>
     </div>
     <!-- SidebarSearch Form -->
-            <img @if (file_exists(public_path(
-                        'storage/uploads/profile_pictures/' .
-                            auth()->user()->username .
-                            '/' .
-                            auth()->user()->username .
-                            '_profile.png'))) src="{{ asset('storage/uploads/profile_pictures/' . auth()->user()->username . '/' . auth()->user()->username . '_profile.png') }}" @endif
-                @if (file_exists(public_path(
-                            'storage/uploads/profile_pictures/' .
-                                auth()->user()->username .
-                                '/' .
-                                auth()->user()->username .
-                                '_profile.jpg'))) src="{{ asset('storage/uploads/profile_pictures/' . auth()->user()->username . '/' . auth()->user()->username . '_profile.jpg') }}" @endif
-                @if (file_exists(public_path(
-                            'storage/uploads/profile_pictures/' .
-                                auth()->user()->username .
-                                '/' .
-                                auth()->user()->username .
-                                '_profile.jpeg'))) src="{{ asset('storage/uploads/profile_pictures/' . auth()->user()->username . '/' . auth()->user()->username . '_profile.jpeg') }}" @endif
-                class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-            <a href="{{ url('/profile') }}" class="d-block">{{ auth()->user()->username }}</a>
-        </div>
-    </div>
-    <!-- SidebarSearch Form -->
-    {{-- <div class="form-inline mt-2">
-        <div class="input-group" data-widget="sidebar-search">
-            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-            <div class="input-group-append">
-                <button class="btn btn-sidebar">
-                    <i class="fas fa-search fa-fw"></i>
-                </button>
-            </div>
-        </div>
-    </div> --}}
     <!-- Sidebar Menu -->
     <nav class="mt-2">
         <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
@@ -65,11 +30,11 @@
                     <p>Data User</p>
                 </a>
             </li>
-            <li class="nav-header">Kompen</li>
+            <li class="nav-header">Data Barang</li>
             <li class="nav-item">
                 <a href="{{ url('/kategori') }}" class="nav-link {{ $activeMenu == 'kategori' ? 'active' : '' }} ">
                     <i class="nav-icon far fa-bookmark"></i>
-                    <p>Tugas Kompen</p>
+                    <p>Kategori Barang</p>
                 </a>
             </li>
             <li class="nav-item">
@@ -108,7 +73,6 @@
                 <a href="{{ url('/logout') }}" class="nav-link {{ $activeMenu == 'logout' ? 'active' : '' }} ">
                     <i class="nav-icon fas fa-sign-out-alt"></i>
                     <p>Logout</p>
-                    <p>Manage Kompen</p>
                 </a>
             </li>
         </ul>
