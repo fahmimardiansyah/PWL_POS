@@ -7,6 +7,7 @@
       <li class="nav-item">
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
+<<<<<<< HEAD
       <li class="nav-item d-none d-sm-inline-block">
         <a href="{{ url('/dashboard') }}" class="nav-link">Home</a>
       </li>
@@ -136,5 +137,10 @@
     </li>
     
     </ul>
+=======
+    </ul>
+
+    <!-- Right navbar links -->
+>>>>>>> 1bd1ccca3acf3c574425cf30227e585e142d8309
   </nav>
   <!-- /.navbar -->

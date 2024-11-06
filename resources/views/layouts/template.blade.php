@@ -23,7 +23,11 @@
     <!-- Theme style -->
 
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/adminlte.min.css') }}">
+<<<<<<< HEAD
     <link rel="stylesheet" href="{{ asset('adminlte/dist/css/style.css') }}">
+=======
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+>>>>>>> 1bd1ccca3acf3c574425cf30227e585e142d8309
 
     @stack('css') <!-- Digunakan untuk memanggil custom css dari perintah push('css') pada masing-masing view -->
 </head>

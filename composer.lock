@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
+
     "content-hash": "347a3a0a7e44a4695fec16e47e03ca40",
+
+    "content-hash": "db99f74e2dbbaa5b5f3898d36c3535f6",
+ 1bd1ccca3acf3c574425cf30227e585e142d8309
     "packages": [
         {
             "name": "barryvdh/laravel-dompdf",
@@ -3971,6 +3975,7 @@
             "time": "2024-07-01T07:33:21+00:00"
         },
         {
+<<<<<<< HEAD
             "name": "stella-maris/clock",
             "version": "0.1.7",
             "source": {
@@ -4018,6 +4023,8 @@
             "time": "2022-11-25T16:15:06+00:00"
         },
         {
+=======
+>>>>>>> 1bd1ccca3acf3c574425cf30227e585e142d8309
             "name": "symfony/console",
             "version": "v6.4.12",
             "source": {
